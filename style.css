@@ -13,23 +13,23 @@ body {
     align-items: center;
     background-color: #fff;
 }
-/* Background for the containers */
+
 .outer-container {
     display: flex;
-    justify-content: space-between; /* Distribute space evenly between filter and results */
+    justify-content: space-between; 
     background-color: #ffdf28;
     border-radius: 8px;
     padding: 20px;
     gap: 20px;
-    width: 65%;  /* Set a fixed width for the outer container */
+    width: 65%; 
 }
 
-/* Spaces btw each Btn and rounds the edges */
+
 .container {
     border-radius: 8px;
 }
 
-/* Styling for the filter and results sections */
+
 .outer-filter {
     display: flex;
     align-items: center;
@@ -41,35 +41,35 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
     width: 100%;
-    overflow-x: auto; /* Enable horizontal scrolling when content exceeds width */
+    overflow-x: auto;
 }
 .outer-filter h2 {
     padding: 0px 10px 0px;
-    white-space: nowrap; /* Prevent wrapping for the h2 text */
+    white-space: nowrap; 
 }
 
 #results {
-    display: flex; /* Enable flexbox layout */
-    flex-wrap: nowrap; /* Prevent wrapping */
+    display: flex; 
+    flex-wrap: nowrap; 
 }
 #results ul {
     list-style-type: none;
-    display: flex; /* Display results in a single horizontal row */
-    flex-wrap: nowrap; /* Prevent wrapping to the next row */
-    gap: 10px; /* Add spacing between result items */
-    overflow-x: auto; /* Allow horizontal scrolling */
-    white-space: nowrap; /* Prevent text wrapping inside list items */
+    display: flex; 
+    flex-wrap: nowrap;
+    gap: 10px; 
+    overflow-x: auto; 
+    white-space: nowrap; 
 }
 #results li {
     background-color: #fffdd7;
     padding: 10px;
     border-radius: 8px;
-    font-size: 14px; /* Keep font size readable */
+    font-size: 14px; 
     color: #333;
 }
 
 
-/* Select Button */
+
 .select-btn {
     display: flex;
     align-items: center;
@@ -84,7 +84,7 @@ body {
     width: 100%; 
 }
 
-/* Size, font, color, and spacing for the text in the select-btn */
+/* size, font, color, and spacing for the text in the select-btn */
 .select-btn .btn-text {
     font-size: 17px;
     font-weight: 400;
@@ -106,12 +106,12 @@ body {
     margin-left: 10px; 
 }
 
-/* Rotate arrow when the dropdown is open */
+/* rotates arrow when the dropdown is open */
 .select-btn.open .arrow-dwn {
     transform: rotate(-180deg);
 }
 
-/* List Items (Dropdown) */
+/* lists items (Dropdown) */
 .list-items {
     position: absolute;
     margin-top: 8px;
@@ -126,14 +126,14 @@ body {
     transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-/* Show dropdown when select-btn is open */
+/* shows dropdown when select-btn is open */
 .select-btn.open ~ .list-items {
     display: block;
     opacity: 1;
     max-height: 500px;  
 }
 
-/* List Item Styles */
+
 .list-items .item {
     display: flex;
     margin: 8px;
@@ -145,7 +145,7 @@ body {
     border-radius: 8px;
     transition: 0.3s;
 }
-/* Highlights item on the list when hovered */
+/* highlights item on the list when hovered */
 .list-items .item:hover {
     background-color: #ffdf2860;
 }
@@ -155,14 +155,14 @@ body {
     outline-offset: 2px;
 }
 
-/* Item Text */
+
 .item .item-text {
     font-size: 13.5px;
     font-weight: 400;
     color: #333;
 }
 
-/* Checkbox Styling */
+
 .item .checkbox {
     display: flex;
     align-items: center;
@@ -175,13 +175,13 @@ body {
     transition: all 0.3s ease-in-out;
     flex-shrink: 0;
 }
-/* Checked the box*/
+
 .item.checked .checkbox {
     background-color: #000000;
     border-color: #000000;
 }
 
-/* Highlighting Selected Item */
+
 .item.highlight {
     background-color: #ffdf2860;
     transition: all 0.3s ease-in-out;
@@ -199,7 +199,7 @@ body {
     transform: scale(1);
 }
 
-/* Active Item State */
+
 .item.selected {
     background-color: #ffdf28;
     color: #000;
