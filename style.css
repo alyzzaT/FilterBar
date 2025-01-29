@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+/* Background for the containers */
+.outer-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between filter and results */
+    background-color: #ffdf28;
+    border-radius: 8px;
+    padding: 20px;
+    gap: 20px;
+    width: 65%;  /* Set a fixed width for the outer container */
+}
+
+/* Spaces btw each Btn and rounds the edges */
+.container {
+    border-radius: 8px;
+}
+
+/* Styling for the filter and results sections */
+.outer-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #faefb177;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling when content exceeds width */
+}
+.outer-filter h2 {
+    padding: 0px 10px 0px;
+    white-space: nowrap; /* Prevent wrapping for the h2 text */
+}
+
+#results {
+    display: flex; /* Enable flexbox layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+#results ul {
+    list-style-type: none;
+    display: flex; /* Display results in a single horizontal row */
+    flex-wrap: nowrap; /* Prevent wrapping to the next row */
+    gap: 10px; /* Add spacing between result items */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent text wrapping inside list items */
+}
+#results li {
+    background-color: #fffdd7;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px; /* Keep font size readable */
+    color: #333;
+}
+
+
+/* Select Button */
+.select-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    width: 100%; 
+}
+
+/* Size, font, color, and spacing for the text in the select-btn */
+.select-btn .btn-text {
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    white-space: nowrap; 
+}
+
+.select-btn .arrow-dwn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 21px; 
+    width: 21px; 
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #000000;
+    transition: 0.3s;
+    margin-left: 10px; 
+}
+
+/* Rotate arrow when the dropdown is open */
+.select-btn.open .arrow-dwn {
+    transform: rotate(-180deg);
+}
+
+/* List Items (Dropdown) */
+.list-items {
+    position: absolute;
+    margin-top: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 10; 
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Show dropdown when select-btn is open */
+.select-btn.open ~ .list-items {
+    display: block;
+    opacity: 1;
+    max-height: 500px;  
+}
+
+/* List Item Styles */
+.list-items .item {
+    display: flex;
+    margin: 8px;
+    align-items: center;
+    list-style-type: none;
+    height: 40px;
+    cursor: pointer;
+    padding: 0 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+/* Highlights item on the list when hovered */
+.list-items .item:hover {
+    background-color: #ffdf2860;
+}
+
+.list-items .item:focus {
+    outline: 2px solid #ffdf28;
+    outline-offset: 2px;
+}
+
+/* Item Text */
+.item .item-text {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* Checkbox Styling */
+.item .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
+    flex-shrink: 0;
+}
+/* Checked the box*/
+.item.checked .checkbox {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+/* Highlighting Selected Item */
+.item.highlight {
+    background-color: #ffdf2860;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Checkmark Animation */
+.checkbox .check-icon {
+    color: #fff;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.item.checked .check-icon {
+    transform: scale(1);
+}
+
+/* Active Item State */
+.item.selected {
+    background-color: #ffdf28;
+    color: #000;
+}
